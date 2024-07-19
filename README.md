@@ -2,9 +2,10 @@
 
 개발중인 크로스 플랫폼 사이드 프로젝트를 2024년 12월까지 출시 목표로 Flutter를 공부하는 Repository
 
----
+<br>
 
-## ⚒️ 개발 환경 설정
+<details>
+<summary>⚒️ 개발 환경 설정</summary>
 
 ### Flutter SDK Setting
 
@@ -46,6 +47,21 @@
 5. AVD Name 정하고 하단 Show Advanced Settings 진입
 6. Internal Storage Size를 적당히 변경(ex: 30GB) 후 Finish를 클릭해 Emulator 생성
 7. (선택) Android Studio Setting - emulator 검색 - Launch in a tool window 체크 해제 (Emulator를 독립적인 창에서 실행)
+
+<br>
+
+### IntelliJ Flutter 개발 환경 세팅
+
+- Settings - SDK 검색 - Edit 눌러 Android SDK 설치
+- Flutter Plugin 설치
+- Flutter SDK 설치 및 환경변수 설정
+- Settings - Flutter 검색 - SDK 경로 설정
+- Dark SDK 경로 지정 -> `/flutter-SDK-경로/bin/cache/dart-sdk`
+- `flutter config --android-sdk [Android SDK 경로]` 입력
+- `flutter doctor` 실행
+- Tools - Android - Device Manager - Device 생성
+
+</details>
 
 ---
 
