@@ -61,6 +61,12 @@
 - `flutter doctor` 실행
 - Tools - Android - Device Manager - Device 생성
 
+<br>
+
+### Flutter Dependency
+
+- `flutter pub add [패키지 이름]`
+
 </details>
 
 ---
