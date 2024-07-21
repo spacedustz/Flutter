@@ -73,4 +73,5 @@
 
 ## 👨‍💻 학습 기록
 
-- [Stateless & Column Widget](./Desc/widget/Widget.md)
+- [📚 Stateless & Stateful Widget](Desc/Widget/State/Stateless-Stateful.md)
+- [📚 Column Widget](Desc/Widget/Column/Column-Widget.md)
