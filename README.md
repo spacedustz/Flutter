@@ -52,7 +52,7 @@
 
 ### IntelliJ Flutter 개발 환경 세팅
 
-- Settings - SDK 검색 - Edit 눌러 Android SDK 설치
+- Settings - SDK 검색 - Edit 눌러 Android SDK 설치 (ANDROID_SDK_ROOT 변수도 같이 설정 - SDK 경로)
 - Flutter Plugin 설치
 - Flutter SDK 설치 및 환경변수 설정
 - Settings - Flutter 검색 - SDK 경로 설정
@@ -78,3 +78,4 @@
 - [📚 Stateless & Stateful Widget](Desc/Widget/State/Stateless-Stateful.md)
 - [📚 Route - 경로 & 화면 매핑](./Desc/Widget/Route/Route.md)
 - [📚 Column & Row & Expanded Widget](Desc/Widget/Row-Column-Expanded/Column-Row-Expanded.md)
+- [📚 Container & SizeBox Widget]
