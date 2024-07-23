@@ -7,6 +7,7 @@ class MainScreen extends StatefulWidget {
   State<MainScreen> createState() => _MainScreenState();
 }
 
+// Column-Row-Expanded Widget
 class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
@@ -21,18 +22,9 @@ class _MainScreenState extends State<MainScreen> {
           children: [
             Text('안녕하세요.'),
             Text('개발자 신건우입니다.'),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Text('이건'),
-                Text('세로축인 Row Widget')],
-            ),
-            Row(
-              children: [
-                Expanded(flex: 2, child: Text('홍길동')),
-                Expanded(child: Text('홍길동')),
-                Expanded(child: Text('홍길동')),
-              ],
+            Container(
+              color: Colors.lightBlueAccent,
+              child: Text('컨테이너'),
             )
           ],
         ),
