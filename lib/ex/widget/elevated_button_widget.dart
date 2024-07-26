@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class MainScreen extends StatefulWidget {
-  const MainScreen({super.key});
+class ElevatedButtonWidget extends StatefulWidget {
+  const ElevatedButtonWidget({super.key});
 
   @override
-  State<MainScreen> createState() => _MainScreenState();
+  State<ElevatedButtonWidget> createState() => _ElevatedButtonWidgetState();
 }
 
-class _MainScreenState extends State<MainScreen> {
+class _ElevatedButtonWidgetState extends State<ElevatedButtonWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,9 +27,9 @@ class _MainScreenState extends State<MainScreen> {
                     print('버튼이 클리 되었습니다.');
                   },
                   style: ElevatedButton.styleFrom( // 버튼 스타일
-                    backgroundColor: Colors.white, // 배경색
-                    foregroundColor: Colors.black, // 글자색
-                    elevation: 10 // 그림자
+                      backgroundColor: Colors.white, // 배경색
+                      foregroundColor: Colors.black, // 글자색
+                      elevation: 10 // 그림자
                   ),
                   child: Text('버튼 누르기'))
             ],
