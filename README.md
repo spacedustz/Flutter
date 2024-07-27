@@ -73,7 +73,7 @@
 
 ## 👨‍💻 학습 기록
 
-**Widget**
+**위젯**
 
 - [📚 Stateless & Stateful Widget](Desc/Widget/State/Stateless-Stateful.md)
 - [📚 Route - 경로 & 화면 매핑](./Desc/Widget/Route/Route.md)
@@ -81,3 +81,9 @@
 - [📚 Container & SizeBox Widget](./Desc/Widget/Container-SizeBox/Container-SizeBox.md)
 - [📚 Elevated Button & List View Widget](./Desc/Widget/ElevateButton-ListView/ElevatedButton-ListView.md)
 - [📚 Text Field Widget(입력값 받기)](./Desc/Widget/TextField/TextField.md)
+
+<br>
+
+**상태 관리**
+
+- [📚 setState - Update Widget & Re-draw UI](./Desc/State/SetState/SetState.md)
