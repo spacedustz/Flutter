@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class SubScreen extends StatelessWidget {
+class TabBarWidget extends StatelessWidget {
   String msg;
 
-  SubScreen({super.key, required this.msg});
+  TabBarWidget({super.key, required this.msg});
 
   @override
   Widget build(BuildContext context) {
