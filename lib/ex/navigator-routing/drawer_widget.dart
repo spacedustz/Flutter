@@ -1,0 +1,55 @@
+import 'package:flutter/material.dart';
+
+class DrawerWidget extends StatefulWidget {
+  const DrawerWidget({super.key});
+
+  @override
+  State<DrawerWidget> createState() => _DrawerWidgetState();
+}
+
+class _DrawerWidgetState extends State<DrawerWidget> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: Text('메인화면'),
+        ),
+        body: Column(
+          children: [
+            TextButton(
+              onPressed: () {
+                // Text Button을 만들면 기본적으로 파란색 링크처럼 표시 됨
+                // 버튼 클릭 시 /sub 화면을 생성하면서 이동
+                Navigator.pushNamed(context, '/sub', arguments: 'Hello');
+
+                // 현재 내 화면과 교체하면서 이동
+                // Navigator.pushReplacementNamed(context, '/sub');
+              },
+              child: Text('서브 화면으로 이동'),
+            ),
+          ],
+        ),
+        drawer: Drawer(
+          child: ListView(
+            children: [
+              DrawerHeader(
+                child: Text('헤더 영역'),
+              ),
+              ListTile(
+                title: Text('홈 화면'),
+                onTap: () {},
+              ),
+              ListTile(
+                title: Text('메인 화면'),
+                onTap: () {},
+              ),
+              ListTile(
+                title: Text('서브 화면'),
+                onTap: () {},
+              ),
+            ],
+          ),
+        )
+    );
+  }
+}

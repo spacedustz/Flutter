@@ -29,6 +29,27 @@ class _MainScreenState extends State<MainScreen> {
           ),
         ],
       ),
+        drawer: Drawer(
+          child: ListView(
+            children: [
+              DrawerHeader(
+                child: Text('헤더 영역'),
+              ),
+              ListTile(
+                title: Text('홈 화면'),
+                onTap: () {},
+              ),
+              ListTile(
+                title: Text('메인 화면'),
+                onTap: () {},
+              ),
+              ListTile(
+                title: Text('서브 화면'),
+                onTap: () {},
+              ),
+            ],
+          ),
+        )
     );
   }
 }
