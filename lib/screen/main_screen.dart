@@ -8,11 +8,6 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  // 사용자의 입력을 컨트롤러가 받음
-  TextEditingController idController = TextEditingController();
-  String stateMessage = '이 곳에 값이 업데이트 됩니다.';
-  ValueNotifier<int> counter = ValueNotifier<int>(0); // 0으로 초기화
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,33 +16,16 @@ class _MainScreenState extends State<MainScreen> {
       ),
       body: Column(
         children: [
-          TextField(
-            controller: idController,
-            decoration: InputDecoration(labelText: '아이디를 입력해 주세요.'),
-          ),
-          // 버튼을 이용해 사용자의 입력값을 컨트롤러에서 가져와 Console에 찍기
-          ElevatedButton(
+          TextButton(
             onPressed: () {
-              // State가 변경되면 stateMessage 변수에 사용자의 입력값을 넣음
-              setState(() {
-                stateMessage = idController.text.toString();
-              });
+              // Text Button을 만들면 기본적으로 파란색 링크처럼 표시 됨
+              // 버튼 클릭 시 /sub 화면을 생성하면서 이동
+              Navigator.pushNamed(context, '/sub', arguments: 'Hello');
 
-              counter.value = 30;
+              // 현재 내 화면과 교체하면서 이동
+              // Navigator.pushReplacementNamed(context, '/sub');
             },
-            child: Text('아이디 입력값 가져오기!'),
-          ),
-
-          // 값을 지속적으로 Listen
-          ValueListenableBuilder<int>(
-            valueListenable: counter,
-            builder: (context, value, child) {
-              return Text('Count : $value');
-            },
-          ),
-          Text(
-            '사용자 입력값 = $stateMessage',
-            style: TextStyle(fontSize: 20),
+            child: Text('서브 화면으로 이동'),
           ),
         ],
       ),
