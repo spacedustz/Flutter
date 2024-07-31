@@ -16,6 +16,7 @@ dependencies:
 
 
   cupertino_icons: ^1.0.6
+  shared_preferences: ^2.3.0
 
 
 dev_dependencies:
@@ -27,4 +28,5 @@ dev_dependencies:
 flutter:
   assets: # Images
     - assets/
+    - assets/card/
   uses-material-design: true
