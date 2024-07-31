@@ -95,3 +95,36 @@
 
 - [📚 Navigating Screen & Argument(Object) 전달](./Desc/Navigation/Navigator-Object/Navigator-Object.md)
 - [📚 Navigation Bar & TapBar & Drawer](./Desc/Navigation/Barr-Drawer/Bar-Drawer.md)
+
+---
+
+## 👨‍💻 명함 앱 만들기 프로젝트
+
+Figma로 그려진 디자인을 1개의 Splash Screen(Stateless)과 Main Screen(Stateful)을 만들어 명함 앱 만들기
+
+이미지의 size나 Figma 상 각 요소의 margin 값 등등은 Figma에 나오니 그 수치를 이용해 Widget을 만듭니다.
+
+![](./Desc/Card-Project/1.png)
+
+<br>
+
+**주요 기능**
+
+- 시작 화면 띄운 후 3초 뒤 메인화면으로 Navigation 전환 (pushReplacementNamed)
+- 자기소개 란 입력값 저장 기능 (Shared Preferences로 상태 값 저장 및 Controller 활용)
+  - 앱 실행 시 저장했던 데이터를 앱 종류 후 다시 재기동 했을떄도 저장된 데이터 불러오기 기능 (initState, SharedPreferences 활용)
+- 입력된 값을 Toggle 방식으로 입력값 수정 기능 (GestureDetector 기능 활용)
+  - 비활성화 시 입력 필드 Lock
+  - 수정 버튼 클릭시 입력 필드 Lock 해제
+  - 빈 값 입력하고 저장 시 저장 안되게 설정 후 SnackBar 메시지 보내기
+
+<br>
+
+- 시작 화면 코드 -> [Splash Screen](./lib/card/splash_screen.dart)
+- 메인 화면 코드 -> [Main Screen](./lib/card/main_screen.dart)
+
+![](./Desc/Card-Project/card_app.gif)
+
+---
+
+## 👨‍💻 아이디어를 기록하는 노트 앱 만들기 프로젝트
