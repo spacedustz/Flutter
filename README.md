@@ -120,8 +120,8 @@ Figma로 그려진 디자인을 1개의 Splash Screen(Stateless)과 Main Screen(
 
 <br>
 
-- 시작 화면 코드 -> [Splash Screen](./lib/card/splash_screen.dart)
-- 메인 화면 코드 -> [Main Screen](./lib/card/main_screen.dart)
+- 시작 화면 코드 -> [splash_screen.dart](./lib/card/splash_screen.dart)
+- 메인 화면 코드 -> [main_screen.dart](./lib/card/main_screen.dart)
 
 ![](./Desc/Card-Project/card_app.gif)
 
@@ -130,3 +130,16 @@ Figma로 그려진 디자인을 1개의 Splash Screen(Stateless)과 Main Screen(
 ## 👨‍💻 아이디어를 기록하는 노트 앱 만들기 프로젝트
 
 ![](./Desc/Idea-Project/1.png)
+
+<br>
+
+**주요 기능**
+
+- 데이터 객체 생성
+- 앱 내부 DB에 저장(SQF Lite DB) => CRUD 기능
+
+<br>
+
+- 데이터 객체 -> [note_info.dart](./lib/note/data/note_info.dart)
+- DB 연결 -> [database_helper.dart](./lib/database/database_helper.dart)
+- 시작 화면 코드 -> [splash_screen.dart](./lib/note/splash_screen.dart)
