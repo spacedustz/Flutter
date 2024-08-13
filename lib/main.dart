@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
-import 'card/main_screen.dart';
-import 'card/splash_screen.dart';
+import 'note/main_screen.dart';
+import 'note/splash_screen.dart';
+
+// import 'card/main_screen.dart';
+// import 'card/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,6 +22,7 @@ class MyApp extends StatelessWidget {
 
       initialRoute: '/',
       routes: {
+        // 명함 앱
         '/': (context) => SplashScreen(),
         '/main': (context) => MainScreen(),
       },
