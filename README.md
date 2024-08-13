@@ -108,7 +108,7 @@ Figma로 그려진 디자인을 1개의 Splash Screen(Stateless)과 Main Screen(
 
 <br>
 
-**주요 기능**
+### 주요 기능
 
 - 시작 화면 띄운 후 3초 뒤 메인화면으로 Navigation 전환 (pushReplacementNamed)
 - 자기소개 란 입력값 저장 기능 (Shared Preferences로 상태 값 저장 및 Controller 활용)
@@ -133,8 +133,36 @@ Figma로 그려진 디자인을 1개의 Splash Screen(Stateless)과 Main Screen(
 
 <br>
 
-**주요 기능**
+### **개발 프로세스**
 
+앱 내부 RDB인 SQFLite에 더미 데이터를 넣어 DB 초기화 시 더미 데이터 1개를 추가해 첫 아이디어 데이터는 더미로 넣고 시작합니다.
+
+```dart
+  Future<void> setDummy() async {
+    var idea = NoteInfo(
+        title: '환경보존 문제해결 앱 아이디어',
+        motive: '길가다가 쓰레그를 주우며 생각남',
+        content: '... 내용 ...',
+        priority: 5,
+        feedback: '유저 피드백 ㅇㅇㅇ',
+        createdAt: DateTime.now().millisecondsSinceEpoch);
+
+    await dbHelper.initDatabase();
+    await dbHelper.insertIdeaInfo(idea);
+  }
+```
+
+![](./Desc/Idea-Project/2.png)
+
+<br>
+
+
+
+<br>
+
+### 주요 기능
+
+- Library 추가 => SQFLite(내부 DB), Rating Bar(레이팅 바), intl(시간 데이터 포맷)
 - 데이터 객체 생성
 - 앱 내부 DB에 저장(SQF Lite DB) => CRUD 기능
 
@@ -143,3 +171,4 @@ Figma로 그려진 디자인을 1개의 Splash Screen(Stateless)과 Main Screen(
 - 데이터 객체 -> [note_info.dart](./lib/note/data/note_info.dart)
 - DB 연결 -> [database_helper.dart](./lib/database/database_helper.dart)
 - 시작 화면 코드 -> [splash_screen.dart](./lib/note/splash_screen.dart)
+- 아이디어 목록 UI 화면 -> [main_screen.dart](./lib/note/main_screen.dart)
