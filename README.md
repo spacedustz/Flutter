@@ -156,7 +156,17 @@ Figma로 그려진 디자인을 1개의 Splash Screen(Stateless)과 Main Screen(
 
 <br>
 
+등록 & 수정 화면은 AppBar만 다르고 나머지 UI는 동일하므로 1개의 화면(위젯)에 데이터를 Nullish로 받아 데이터가 존재하면 수정화면, 없으면 등록화면으로 재활용 합니다.
 
+```dart
+class EditScreen extends StatefulWidget {
+  NoteInfo? data;
+  EditScreen({super.key, this.data});
+
+  @override
+  State<EditScreen> createState() => _EditScreenState();
+}
+```
 
 <br>
 
@@ -172,3 +182,4 @@ Figma로 그려진 디자인을 1개의 Splash Screen(Stateless)과 Main Screen(
 - DB 연결 -> [database_helper.dart](./lib/database/database_helper.dart)
 - 시작 화면 코드 -> [splash_screen.dart](./lib/note/splash_screen.dart)
 - 아이디어 목록 UI 화면 -> [main_screen.dart](./lib/note/main_screen.dart)
+- 아이디어 등록/수정 UI 화면 -> [edit_screen.dart](./lib/note/edit_screen.dart)
