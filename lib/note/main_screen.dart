@@ -47,7 +47,9 @@ class _MainScreenState extends State<MainScreen> {
       ),
       // 아이디어를 생성하는 버튼
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, '/edit');
+        },
         child: Image.asset(
           'assets/note/light.png',
           width: 48,
