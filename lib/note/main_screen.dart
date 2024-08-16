@@ -41,16 +41,52 @@ class _MainScreenState extends State<MainScreen> {
         child: ListView.builder(
           itemCount: list.length, // 리스트 항목의 수
           itemBuilder: (context, index) {
-            return GestureDetector(child: listItem(index), onTap: () {
-              Navigator.pushNamed(context, '/detail', arguments: list[index]);
-            },);
+            return GestureDetector(
+              child: listItem(index),
+              onTap: () async {
+                var result = await Navigator.pushNamed(context, '/detail',
+                    arguments: list[index]);
+
+                if (result != null) {
+                  String msg = '';
+
+                  if (result == 'edit') {
+                    msg = '아이디어가 수정 되었습니다.';
+                  } else if (result == 'insert') {
+                    msg = '아이디어가 삭제 되었습니다.';
+                  }
+
+                  // Refresh List
+                  getIdeaInfo();
+
+                  // Show SnackBar
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text(msg),
+                    ),
+                  );
+                }
+              },
+            );
           },
         ),
       ),
       // 아이디어를 생성하는 버튼
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.pushNamed(context, '/edit');
+        onPressed: () async {
+          var result = await Navigator.pushNamed(context, '/edit');
+
+          if (result != null) {
+            getIdeaInfo();
+
+            if (mounted) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(
+                  content: Text('새로운 아이디어가 추가 되었습니다!'),
+                ),
+              );
+            }
+          }
         },
         child: Image.asset(
           'assets/note/light.png',
