@@ -14,6 +14,54 @@ class EditScreen extends StatefulWidget {
 }
 
 class _EditScreenState extends State<EditScreen> {
+  @override
+  void initState() {
+    super.initState();
+
+    // 기존 데이터를 수정할 경우, 기존 데이터를 위젯에 매핑
+
+    if (widget.data != null) {
+      titleController.text = widget.data!.title;
+      motiveController.text = widget.data!.motive;
+      contentController.text = widget.data!.content;
+
+      if (widget.data!.feedback.isNotEmpty) {
+        feedbackController.text = widget.data!.feedback;
+      }
+
+      // 중요도 점수 세팅
+      initClickList();
+      switch (widget.data!. priority) {
+        case 1: {
+          isClickedList[0] = true;
+          break;
+        }
+
+        case 2: {
+          isClickedList[1] = true;
+          break;
+        }
+
+        case 3: {
+          isClickedList[2] = true;
+          break;
+        }
+
+        case 4: {
+          isClickedList[3] = true;
+          break;
+        }
+
+        case 5: {
+          isClickedList[4] = true;
+          break;
+        }
+      }
+      priorityPoint = widget.data!.priority;
+
+    }
+  }
+
   final DB = DatabaseHelper();
 
   final TextEditingController titleController = TextEditingController();
@@ -23,6 +71,12 @@ class _EditScreenState extends State<EditScreen> {
 
   int priorityPoint = 0;
   List<bool> isClickedList = [false, false, false, false, false];
+
+  void initClickList() {
+    for (int i = 0; i < isClickedList.length; i++) {
+      isClickedList[i] = false;
+    }
+  }
 
   void onPointClicked(int index) {
     setState(() {
@@ -58,7 +112,7 @@ class _EditScreenState extends State<EditScreen> {
           },
         ),
         title: Text(
-          '새 아이디어 작성하기',
+          widget.data == null ? '새 아이디어 작성하기' : '아이디어 편집하기',
           style: TextStyle(color: Colors.black, fontSize: 16),
         ),
       ),
@@ -138,7 +192,22 @@ class _EditScreenState extends State<EditScreen> {
                     await DB.initDatabase();
                     await DB.insertIdeaInfo(info);
 
-                    if (mounted) Navigator.pop(context);
+                    if (mounted) Navigator.pop(context, 'insert');
+                  } else {
+                    // 데이터 수정일 경우
+                    var note = widget.data;
+                    note?.title = titleValue;
+                    note?.motive = motiveValue;
+                    note?.content = contentValue;
+                    note?.priority = priorityPoint;
+                    note?.feedback = feedbackValue.isNotEmpty ? feedbackValue : '';
+
+                    await DB.initDatabase();
+                    await DB.updateIdea(note!);
+
+                    if (mounted) {
+                      Navigator.pop(context, 'edit');
+                    }
                   }
 
                 },
