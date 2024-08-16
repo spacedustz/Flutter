@@ -41,7 +41,9 @@ class _MainScreenState extends State<MainScreen> {
         child: ListView.builder(
           itemCount: list.length, // 리스트 항목의 수
           itemBuilder: (context, index) {
-            return listItem(index);
+            return GestureDetector(child: listItem(index), onTap: () {
+              Navigator.pushNamed(context, '/detail', arguments: list[index]);
+            },);
           },
         ),
       ),
