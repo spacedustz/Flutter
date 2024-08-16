@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ex/note/detail_screen.dart';
 import 'package:flutter_ex/note/edit_screen.dart';
 
 import 'note/data/note_info.dart';
@@ -39,6 +40,12 @@ class MyApp extends StatelessWidget {
           
           return MaterialPageRoute(builder: (context) {
             return EditScreen(data: data,);
+          },);
+        } else if (settings.name == '/detail') {
+          final NoteInfo? data = settings.arguments as NoteInfo?; // null 처리
+
+          return MaterialPageRoute(builder: (context) {
+            return DetailScreen(data: data,);
           },);
         }
       },
