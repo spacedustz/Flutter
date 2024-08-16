@@ -123,36 +123,21 @@ Figma로 그려진 디자인을 1개의 Splash Screen(Stateless)과 Main Screen(
 - 시작 화면 코드 -> [splash_screen.dart](./lib/card/splash_screen.dart)
 - 메인 화면 코드 -> [main_screen.dart](./lib/card/main_screen.dart)
 
+<br>
+
+### 실행 영상
+
 ![](./Desc/Card-Project/card_app.gif)
 
 ---
 
 ## 👨‍💻 아이디어를 기록하는 노트 앱 만들기 프로젝트
 
+아이디어를 기록하는 노트앱을 만들며 기본적인 Flutter의 CRUD 기능 개발을 학습합니다.
+
+DB는 SQFLite를 사용합니다.
+
 ![](./Desc/Idea-Project/1.png)
-
-<br>
-
-### **개발 프로세스**
-
-앱 내부 RDB인 SQFLite에 더미 데이터를 넣어 DB 초기화 시 더미 데이터 1개를 추가해 첫 아이디어 데이터는 더미로 넣고 시작합니다.
-
-```dart
-  Future<void> setDummy() async {
-    var idea = NoteInfo(
-        title: '환경보존 문제해결 앱 아이디어',
-        motive: '길가다가 쓰레그를 주우며 생각남',
-        content: '... 내용 ...',
-        priority: 5,
-        feedback: '유저 피드백 ㅇㅇㅇ',
-        createdAt: DateTime.now().millisecondsSinceEpoch);
-
-    await dbHelper.initDatabase();
-    await dbHelper.insertIdeaInfo(idea);
-  }
-```
-
-![](./Desc/Idea-Project/2.png)
 
 <br>
 
@@ -183,3 +168,10 @@ class EditScreen extends StatefulWidget {
 - 시작 화면 코드 -> [splash_screen.dart](./lib/note/splash_screen.dart)
 - 아이디어 목록 UI 화면 -> [main_screen.dart](./lib/note/main_screen.dart)
 - 아이디어 등록/수정 UI 화면 -> [edit_screen.dart](./lib/note/edit_screen.dart)
+- 아이디어 상세조회/삭제 UI 화면 -> [detail_screen.dart](./lib/note/detail_screen.dart)
+
+<br>
+
+### 실행 영상
+
+![](./Desc/Idea-Project/idea_app.gif)
